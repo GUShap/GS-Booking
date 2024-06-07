@@ -1,0 +1,601 @@
+:root {
+    --expand-button-color: #5986e7;
+    --add-to-cart-bg-color: #e8eaeb;
+    --red-alert-color: #ff9a9a;
+}
+
+.woocommerce #main-gallery .woocommerce-product-gallery__image,
+.woocommerce #main-gallery .woocommerce-product-gallery__image a {
+    height: 340px;
+    display: block;
+}
+
+.woocommerce #main-gallery .woocommerce-product-gallery__image a img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .woocommerce #main-gallery .woocommerce-product-gallery__image a{
+    max-height: 100%;
+    display: block;
+} */
+
+.woocommerce #main-gallery ol li {
+    height: 140px;
+}
+
+.woocommerce #main-gallery ol li img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-retreat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-retreat-to-cart-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 0px 15px 3px #00000052;
+    background-color: var(--add-to-cart-bg-color);
+}
+
+@media screen and (min-width: 768px) {
+    .add-retreat-to-cart-container {
+        margin-top: 15px;
+        width: 300px;
+        /* z-index: 101; */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .add-retreat-to-cart-container {
+        width: 90%;
+        margin-top: 15px;
+        z-index: 1;
+    }
+}
+
+.add-retreat-to-cart-container:has(.rooms-list-popup[data-active="true"]) {
+    box-shadow: none;
+}
+
+.add-retreat-to-cart-container[date-selected="false"] .rooms-list-container,
+.add-retreat-to-cart-container[date-selected="false"] .book-retreat-wrapper,
+.add-retreat-to-cart-container[date-selected="false"] .retreat-dates-container,
+.add-retreat-to-cart-container[room-selected="false"] .room-price-wrapper,
+.add-retreat-to-cart-container[room-selected="false"] .awcdp-deposits-wrapper {
+    display: none;
+}
+
+.add-retreat-to-cart-container p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.add-retreat-to-cart-container .instruction-text-wrapper{
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.add-retreat-to-cart-container .instruction-text-wrapper .instructions-icon{
+    width: 26px;
+    min-width: 26px;
+    cursor: pointer;
+}
+.add-retreat-to-cart-container .instruction-text-wrapper .instructions-text{
+    line-height: 1;
+    align-self: center;
+}
+
+.add-retreat-to-cart-container .dates-prefix {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.add-retreat-to-cart-container .room-price-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.add-retreat-to-cart-container .completing-products {
+    width: 100%;
+}
+
+.add-retreat-to-cart-container .completing-product-wrapper:has(input[type="checkbox"]:not(:checked)) .quantity-wrapper{
+    display: none;
+}
+
+.add-retreat-to-cart-container .completing-product-wrapper {
+    width: 100%;
+    padding: 6px 3px;
+    background-color: #fff;
+    border: 1px solid #b2adb8;
+    border-radius: 5px;
+}
+
+.completing-product-wrapper .quantity-wrapper{
+    text-align: end;
+    margin-top: 5px;
+}
+
+.completing-product-wrapper input[type="number"]{
+    direction: rtl;
+    padding: 0 5px 0 0;
+    width: 30px;
+}
+
+.add-retreat-to-cart-container .room-price-wrapper .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-retreat-to-cart-container .room-price-wrapper .checkbox-wrapper label {
+    font-family: 'Inter';
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--e-global-color-accent);
+}
+
+.add-retreat-to-cart-container .room-price-wrapper .completing-product-price {
+    text-align: end;
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.add-retreat-to-cart-container .room-price-wrapper .price-text .price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0e0e0e;
+}
+
+.book-retreat-wrapper {
+    text-align: center;
+}
+
+.book-retreat-wrapper button[role="add-to-cart"] {
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+    line-height: 1;
+    border: none;
+    transition: all 0.3s linear;
+}
+
+.book-retreat-wrapper button[role="add-to-cart"]:disabled {
+    background-color: #00000052;
+}
+
+.add-retreat-to-cart-container .overlay {
+    height: 240px;
+    inset: 0;
+    background-color: #e7eaeb;
+    z-index: 2;
+}
+
+.add-retreat-to-cart-container.processing:after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-color: #00000000;
+    animation: bg-color-change .3s linear forwards;
+}
+
+@keyframes bg-color-change {
+    0% {
+        background-color: #00000000;
+    }
+
+    100% {
+        background-color: #0000005e;
+    }
+}
+
+.add-retreat-to-cart-container.processing .instruction-text-wrapper,
+.add-retreat-to-cart-container.processing .awcdp-deposits-wrapper,
+.add-retreat-to-cart-container.processing .room-price-wrapper,
+.add-retreat-to-cart-container.processing .waitlist-form-wrapper{
+    display: none;
+}
+
+.add-retreat-to-cart-container .custom-loader,
+.add-retreat-to-cart-container .after-atc-options {
+    position: absolute;
+    z-index: 2;
+}
+
+.add-retreat-to-cart-container .custom-loader {
+    top: calc(50% - 37.5px);
+    left: calc(50% - 37.5px);
+}
+
+.add-retreat-to-cart-container .after-atc-options {
+    inset: 0;
+}
+
+.add-retreat-to-cart-container .after-atc-options .options-title {
+    margin: 40px 25px;
+}
+
+.add-retreat-to-cart-container .after-atc-options .buttons-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    gap: 35px;
+    height: 50%;
+}
+
+.add-retreat-to-cart-container .after-atc-options a {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.add-retreat-to-cart-container .after-atc-options a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    left: 0;
+    background-color: #7a6366;
+    transition: all .3s linear;
+}
+
+.add-retreat-to-cart-container .after-atc-options a::before {
+    bottom: 0;
+}
+
+.add-retreat-to-cart-container .after-atc-options a:hover:before {
+    width: 100%;
+}
+
+.add-retreat-to-cart-container .after-atc-options a svg {
+    width: 18px;
+    transition: all .3s linear;
+}
+
+.add-retreat-to-cart-container .after-atc-options a:hover svg {
+    transform: scale(1.15);
+}
+.add-retreat-to-cart-container .show-rooms-list-wrapper {
+    text-align: end;
+}
+
+.add-retreat-to-cart-container .open-list-popup-button,
+.add-retreat-to-cart-container .open-list-popup-button:focus {
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    padding: 0;
+    border-color: var(--add-to-cart-bg-color);
+    background-color: var(--add-to-cart-bg-color);
+    color: var(--expand-button-color);
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.add-retreat-to-cart-container .open-list-popup-button:hover {
+    border-color: var(--expand-button-color);
+    color: var(--expand-button-color);
+    background-color: var(--add-to-cart-bg-color);
+    padding: 0 5px;
+}
+
+body:has(.rooms-list-popup[data-active="true"]),
+html:has(.rooms-list-popup[data-active="true"]) {
+    overflow: hidden;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup[data-active="false"] {
+    display: none;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000099;
+    padding: 0 30px 30px;
+    z-index: 1;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .list-wrapper {
+    max-width: 1100px;
+    position: absolute;
+    width: 100%;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .close-button-wrapper {
+    position: relative;
+    background-color: #fff;
+    text-align: end;
+    padding-bottom: 5px;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .close-button {
+    padding: 7px;
+    line-height: 0.7;
+    border: 1px solid var(--e-global-color-secondary);
+    color: var(--e-global-color-secondary);
+    background-color: #fff;
+    transition: all .3s linear;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .close-button:hover {
+    color: #fff;
+    background-color: var(--e-global-color-secondary);
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .rooms-list {
+    max-height: 600px;
+    overflow: auto;
+    list-style: none;
+    background-color: #fff;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .add-retreat-to-cart-container .rooms-list-popup .list-wrapper{
+        top:102px
+    }
+    .add-retreat-to-cart-container .rooms-list-popup .rooms-list {
+        padding-left: 5px;
+    }
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .rooms-list>li {
+    position: relative;
+    padding: 10px;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .close-button-wrapper:after,
+.add-retreat-to-cart-container .rooms-list-popup .rooms-list>li:after {
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 1px;
+    background-color: #636363;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-heading,
+.add-retreat-to-cart-container .rooms-list-popup .room-heading .right,
+.add-retreat-to-cart-container .rooms-list-popup .room-content-wrapper {
+    display: flex;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-heading {
+    justify-content: space-between;
+    /* padding-left: 10px; */
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-heading .right {
+    gap: 10px;
+    align-items: center;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .price-wrapper {
+    text-align: end;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-price {
+    font-weight: 600;
+    color: #686f70;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-deposit {
+    font-size: 12px;
+    font-weight: 600;
+    color: #979a9a;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup button.book-room-button {
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 8px;
+    height: fit-content;
+    border: 1px solid var(--e-global-color-accent);
+    color: var(--e-global-color-accent);
+    background-color: #fff;
+    transition: all 0.3s linear;
+}
+
+.add-retreat-to-cart-container .room-item-popup.selected .book-room-button {
+    color: #fff;
+    background-color: var(--e-global-color-accent);
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .booked-room-alert {
+    max-width: 120px;
+    padding: 0 5px;
+    color: var(--red-alert-color);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 7px;
+    border: 2px solid var(--red-alert-color);
+    user-select: none;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup button.book-room-button:hover {
+    color: #fff;
+    background-color: var(--e-global-color-accent);
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-content-wrapper {
+    align-items: center;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup ul.room-details-list li {
+    text-transform: capitalize;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-image-wrapper {
+    width: 200px;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-gallery-wrapper {
+    margin-top: 25px;
+    position: relative;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .gallery-slider-wrapper {
+    overflow: hidden;
+    display: none;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-gallery-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 4px;
+    outline: none;
+    border: none;
+    border-bottom-right-radius: 0;
+    background-color: #fff;
+    color: var(--expand-button-color);
+    cursor: pointer;
+    transition: all .3s linear;
+    z-index: 1;
+
+}
+
+.add-retreat-to-cart-container .rooms-list-popup button.next-image-button {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 0px;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    height: 26px;
+    width: 26px;
+    font-size: 15px;
+    border-radius: 50%;
+    font-weight: 700;
+    outline: none;
+    z-index: 1;
+}
+
+.add-retreat-to-cart-container .rooms-list-popup ul.room-gallery {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    transform: translateX(0);
+}
+
+.add-retreat-to-cart-container .rooms-list-popup .room-gallery img {
+    height: 100%;
+    max-width: unset;
+    width: clamp(220px, 21.5vw, 420px);
+    object-fit: cover;
+}
+
+.add-retreat-to-cart-container #waitlist-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+.add-retreat-to-cart-container #waitlist-form .waitlist-submit-button{
+    border: none;
+}
+
+.add-retreat-to-cart-container .waitlist-message{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+    font-weight: 500;
+}
+.add-retreat-to-cart-container .overlay .close-overlay-button{
+    width: 24px;
+    height: 24px;
+    float: right;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    margin: 5px;
+}
+
+
+.custom-loader {
+    display: block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+}
+
+.custom-loader::before,
+.custom-loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite alternate;
+}
+
+.custom-loader::after {
+    transform: rotate3d(90, 90, 0, 180deg);
+    border-color: #FF3D00;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+    }
+
+    75%,
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+    }
+}

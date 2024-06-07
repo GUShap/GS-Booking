@@ -1,0 +1,1223 @@
+/*----------------- 
+Backend related CSS
+-----------------*/
+
+/* ORDERS */
+
+#wc-orders-filter .wc-orders-list-table mark.status-deposit-paid {
+    background-color: #77b1e1;
+
+}
+
+#wc-orders-filter .wc-orders-list-table mark.status-deposit-expired {
+    background-color: #9d6f6f;
+    color: #fff;
+}
+
+/* #order_data .order_data_column:last-of-type {
+    display: none;
+} */
+
+#order_data .order_data_column_container{
+    display: flex;
+    gap: 60px;
+}
+
+#order_data .deposit-data-container {
+    max-width: 350px;
+}
+
+#order_data .second-participant-container p,
+#order_data .deposit-data-container p {
+    margin: 0;
+}
+
+#order_data .deposit-data-container a {
+    line-break: anywhere;
+}
+
+
+/* ROOMS CPT */
+
+#package_attr select {
+    min-height: unset;
+    line-height: 1.4;
+}
+
+#package_attr .package-attr-content {
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+}
+
+#package_attr .package-attr-content section {
+    padding: 10px 0;
+}
+
+#package_attr .package-attr-content .section-title {
+    margin: 10px 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#package_attr .general-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#package_attr .select-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+#package_attr .room-capacity-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+#package_attr .room-capacity-wrapper select {
+    width: 55px;
+}
+
+#package_attr .package-attr-content section.beds-wrapper {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#package_attr .beds-wrapper .options-wrapper {
+    display: flex;
+    justify-content: space-between;
+    /* max-width: 600px; */
+}
+
+#package_attr .beds-wrapper select {
+    width: 100%;
+}
+
+#package_attr .beds-wrapper .bed-type-wrapper {
+    padding: 7px;
+    background-color: #cfe3e4;
+    border-radius: 5px;
+}
+
+#package_attr .beds-wrapper .bed-type-wrapper:has(input:not(:checked)) .number-of-beds-wrapper {
+    display: none;
+}
+
+#package_attr .beds-wrapper .bed-type-wrapper label {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+#package_attr .amenities-wrapper .options-wrapper {
+    max-width: 350px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+#gallery-preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+#gallery-preview li {
+    position: relative;
+}
+
+#gallery-preview li .remove-image-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    font-size: 14px;
+    font-weight: 600;
+    height: 20px;
+    width: 20px;
+    padding-bottom: 3px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(230, 230, 230);
+    color: #030303;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+#gallery-preview li .remove-image-button:hover {
+    background-color: #030303;
+    color: rgb(230, 230, 230);
+}
+
+#gallery-preview li img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+/* MESSAGES CPT */
+#retreat-message-options h4,
+#order-message-options h4 {
+    margin: 0 0 5px;
+}
+
+#retreat-message-options .input-wrapper,
+#order-message-options .input-wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#retreat-message-options input[type="number"],
+#order-message-options input[type="number"] {
+    width: 35px;
+    direction: rtl;
+    padding: 0 3px 0 0;
+}
+
+#retreat-message-options .message-options-content,
+#order-message-options .message-options-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+#retreat-message-options .message-options-content .schedule-message .content,
+#order-message-options .message-options-content .schedule-message .content,
+#retreat-message-options .message-options-content .timing-wrapper,
+#order-message-options .message-options-content .timing-wrapper {
+    display: flex;
+}
+
+#retreat-message-options .message-options-content .schedule-message,
+#order-message-options .message-options-content .schedule-message,
+#retreat-message-options .input-wrapper.attachment,
+#order-message-options .input-wrapper.attachment {
+    grid-column: 1/-1;
+}
+
+#retreat-message-options .message-options-content .schedule-message h4,
+#order-message-options .message-options-content .schedule-message h4 {
+    margin-bottom: 8px;
+}
+
+#retreat-message-options .message-options-content .schedule-message p,
+#order-message-options .message-options-content .schedule-message p {
+    margin: 0;
+}
+
+#retreat-message-options .message-options-content .schedule-message .content,
+#order-message-options .message-options-content .schedule-message .content {
+    max-width: 850px;
+    justify-content: space-between;
+}
+
+#retreat-message-options .message-options-content .schedule-message .content {
+    margin: auto;
+}
+
+#retreat-message-options .message-options-content .timing-wrapper,
+#order-message-options .message-options-content .timing-wrapper {
+    width: 23%;
+    flex-direction: column;
+}
+
+#retreat-message-options .message-options-content .timing-wrapper .input-wrapper,
+#order-message-options .message-options-content .timing-wrapper .input-wrapper {
+    align-items: baseline;
+}
+
+#retreat-message-options .message-options-content .timing-wrapper:not(:last-child),
+#order-message-options .message-options-content .timing-wrapper:not(:last-child) {
+    /* padding: 0  0 0 25px; */
+    border-right: 1px solid #e5e5e5;
+    /* border-left: 1px solid #e5e5e5; */
+}
+
+#retreat-message-options .message-options-content .timing-wrapper:not(:has(input[type="checkbox"]:checked)) .type-text,
+#retreat-message-options .message-options-content .timing-wrapper:not(:has(input[type="checkbox"]:checked)) .type-time,
+#order-message-options .message-options-content .timing-wrapper:not(:has(input[type="checkbox"][role="activate"]:checked)) .type-text,
+#order-message-options .message-options-content .timing-wrapper:not(:has(input[type="checkbox"][role="activate"]:checked)) .type-time {
+    display: none;
+}
+
+#retreat-message-options .message-options-content .timing-wrapper .type-checkbox,
+#order-message-options .message-options-content .timing-wrapper .type-checkbox {
+    width: 100%;
+}
+
+#retreat-message-options .input-wrapper.attachment,
+#order-message-options .input-wrapper.attachment {
+    gap: 15px;
+}
+
+#retreat-message-options .input-wrapper.attachment p,
+#order-message-options .input-wrapper.attachment p,
+.attachment-button {
+    white-space: nowrap;
+}
+
+#order-message-options .input-wrapper.subject {
+    grid-column: 1/3;
+}
+
+#order-message-options .input-wrapper.subject textarea {
+    width: 320px;
+}
+
+#order-message-variables ul.variables-list {
+    list-style: disc;
+    margin-left: 8px;
+}
+
+
+/* RETREATS MANAGE */
+:root {
+    --date-title-bg: #9681a9;
+
+}
+
+#retreats-management .retreats-wrapper {
+    position: relative;
+    display: grid;
+}
+
+#retreats-management .single-retreat {
+    grid-area: 1/-1;
+    display: flex;
+    gap: 25px;
+}
+
+#retreats-management .single-retreat p {
+    margin: 0;
+}
+
+#retreats-management .single-retreat .retreat-heading {
+    width: 15%;
+    height: fit-content;
+    padding: 0 8px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+}
+
+#retreats-management .single-retreat .retreat-heading h3 {
+    margin: 0;
+    padding: 8px 0;
+}
+
+#retreats-management .single-retreat .retreat-content {
+    position: relative;
+    width: 85%;
+    max-width: 1140px;
+    padding: 15px;
+    z-index: 1;
+}
+
+#retreats-management .single-retreat .retreat-content h4 {
+    margin: 0;
+}
+
+#retreats-management .single-retreat .retreat-content .title-echo {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+
+}
+
+#retreats-management .single-retreat[data-selected='true'] {
+    /* z-index: 1; */
+}
+
+#retreats-management .single-retreat[data-selected='true'] .retreat-heading,
+#retreats-management .single-retreat[data-selected='true'] .retreat-content {
+    background-color: #fff;
+}
+
+#retreats-management .single-retreat[data-selected='false'] .retreat-content {
+    display: none;
+}
+
+#retreats-management .single-retreat .departure-dates {
+    overflow: hidden;
+    position: relative;
+}
+
+#retreats-management .single-retreat .departure-dates-content {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px 10px; */
+}
+
+@media (max-width: 1024px) {
+    #retreats-management .single-retreat .departure-dates-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#retreats-management .departure-date,
+#retreats-management .departure-date .heading h5 {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+#retreats-management h5 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+#retreats-management .departure-date {
+    width: 100%;
+    justify-self: center;
+    transition: all .3s linear;
+}
+
+#retreats-management .departure-date[data-selected="true"] {
+    z-index: 1;
+}
+
+#retreats-management .departure-date[data-selected="false"] .content {
+    opacity: 0;
+}
+
+#retreats-management .departure-date .heading {
+    color: #fff;
+    background-color: var(--date-title-bg);
+    padding: 15px 6px;
+    cursor: pointer;
+    transition: all .3s linear;
+    border: 1px solid var(--date-title-bg);
+}
+
+#retreats-management .departure-date[data-selected="false"] .heading {
+    background-color: #fff;
+    color: var(--date-title-bg);
+}
+
+#retreats-management .departure-date .heading:hover,
+#retreats-management .departure-date[data-selected="true"] .heading {
+    color: #fff;
+    background-color: var(--date-title-bg);
+}
+
+#retreats-management .departure-date .heading h5 {
+    font-size: 16px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#retreats-management .departure-date .content {
+    display: none;
+    position: relative;
+    padding: 10px 15px;
+    border: 1px solid var(--date-title-bg);
+}
+
+#retreats-management .departure-date .departure-content-section{
+    margin-bottom: 25px;
+}
+
+#retreats-management .rooms .rooms-list,
+#rooms-stats .rooms-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#retreats-management .rooms .rooms-list>li,
+#rooms-stats .rooms-list>li {
+    border-radius: 4px;
+    transition: all .3s linear;
+    cursor: pointer;
+    width: 30%;
+}
+
+
+#retreats-management .rooms .rooms-list>li .room-heading,
+#retreats-management .rooms .rooms-list>li .room-content,
+#rooms-stats .rooms-list>li .room-heading,
+#rooms-stats .rooms-list>li .room-content {
+    padding: 8px 4px;
+}
+
+#retreats-management .rooms .rooms-list>li .room-name,
+#rooms-stats .rooms-list>li .room-name {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    height: fit-content;
+    transition: all .3s linear;
+}
+
+#retreats-management .rooms .rooms-list>li:hover .room-name,
+#rooms-stats .rooms-list>li:hover .room-name {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#retreats-management .rooms .rooms-list>li[data-selected="true"] .room-name,
+#rooms-stats .rooms-list>li[data-selected="true"] .room-name {
+    padding-bottom: 10px;
+}
+
+#retreats-management .rooms .rooms-list li,
+#rooms-stats .rooms-list li {
+    margin: 0;
+}
+
+#retreats-management .rooms .rooms-list>li .room-content,
+#rooms-stats .rooms-list>li .room-content {
+    display: none;
+    position: relative;
+    background-color: #f3f6f6;
+}
+
+#retreats-management .rooms .rooms-list>li .status strong {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#retreats-management .rooms .room-content-section {
+    margin-bottom: 15px;
+}
+
+#retreats-management .rooms .room-section-content{
+    margin-left: 15px;
+}
+
+#retreats-management .rooms .room-guests-list {
+    display: flex;
+    gap: 35px;
+}
+
+#retreats-management .rooms .addons-list,
+#retreats-management .rooms .room-guests-list{
+    list-style: disc;
+}
+
+/* #retreats-management form.book-room-form[data-active="false"] {
+    display: none;
+}
+
+#retreats-management form.book-room-form[data-active="true"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+#retreats-management form.book-room-form .first-guest,
+#retreats-management form.book-room-form .second-guest {
+    width: 48%;
+}
+
+#retreats-management form.book-room-form .second-guest:not(:has(input[name="guests[second][add]"]:checked)) .second-guest-content,
+#retreats-management form.book-room-form .order-wrapper:not(:has(input[name="order[create_order]"]:checked)) .order-content {
+    display: none;
+}
+
+#retreats-management form.book-room-form .order-wrapper:has(input[name="order[create_order]"]:checked) .order-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+} */
+
+/* #retreats-management form.book-room-form .input-wrapper {
+    display: flex;
+}
+
+#retreats-management form.book-room-form .input-wrapper.type-text {
+    flex-direction: column;
+}
+
+#retreats-management form.book-room-form .input-wrapper.type-checkbox {
+    margin-top: 8px;
+    align-items: center;
+
+} */
+
+#retreats-management ul.guests-list p {
+    margin: 0;
+}
+
+#retreats-management ul.guests-list>li {
+    display: grid;
+    grid-template-columns: 26% 1fr;
+    align-items: start;
+    justify-content: space-between;
+    border-bottom: 1px solid #8a7f7f;
+}
+
+#retreats-management ul.guests-list li.guests-heading {
+    font-weight: 700;
+    color: #fff;
+    background-color: rgb(185, 150, 99);
+    padding: 5px 8px;
+}
+
+#retreats-management ul.guests-list>li:not(.guests-heading) {
+    padding: 8px 12px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+#retreats-management ul.guests-list>li:not(.guests-heading):before {
+    content: '\276F';
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+#retreats-management ul.guests-list li.expanded:not(.guests-heading):before {
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+#retreats-management ul.guests-list li:not(.expanded, .guests-heading) .expanding-item-content {
+    display: none;
+}
+
+#retreats-management ul.guests-list li .expanding-item-content,
+#rooms-stats .rooms-list .single-payment-wrapper .content {
+    /* display: none; */
+    padding-left: 8px;
+}
+
+#retreats-management ul.guests-list li .expanding-details p {
+    width: fit-content;
+    background-color: #faeaff;
+    margin-bottom: 6px !important;
+    padding: 2px 8px;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+#retreats-management ul.guests-list li .actions {
+    display: flex;
+    gap: 25px;
+}
+
+#retreats-management ul.guests-list li .actions>* {
+    width: 50%;
+}
+
+#retreats-management .retreat-messages-list li {
+    display: flex;
+    justify-content: space-between;
+    max-width: 310px;
+    cursor: pointer;
+}
+
+#retreats-management .retreat-messages-list li button {
+    white-space: nowrap;
+    height: fit-content;
+    align-self: center;
+}
+
+#retreats-management ul.guests-list li .details[edit-mode="false"]{
+    --button-color: #c88022;
+}
+#retreats-management ul.guests-list li .details[edit-mode="true"]{
+    --button-color: #2ca73d;
+}
+
+#retreats-management ul.guests-list li .details .details-buttons-wrapper{
+    margin-top: 15px;
+}
+
+#retreats-management ul.guests-list li .details[edit-mode="false"] .details-edit-form-wrapper,
+#retreats-management ul.guests-list li .details[edit-mode="true"] .editable,
+#retreats-management ul.guests-list li .details[edit-mode="true"] button.edit-details{
+    display: none;
+}
+
+#retreats-management ul.guests-list li .details .details-button{
+    padding: 2px 8px;
+    border: 1px solid var(--button-color);
+    border-radius: 3px;
+    background-color: #fff;
+    color: var(--button-color);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all .3s linear;
+}
+
+#retreats-management ul.guests-list li .details .details-button:hover{
+    background-color: var(--button-color);
+    color: #fff;
+}
+
+#retreats-management ul.guests-list li form.edit-participant-details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 80%;
+}
+
+#retreats-management ul.guests-list li form.edit-participant-details .checkbox-wrapper.hidden{
+    display: none;
+}
+#retreats-management ul.guests-list li form.edit-participant-details .checkbox-wrapper:not(.hidden){
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+#retreats-management ul.guests-list li form.edit-participant-details .checkbox-wrapper input{
+    margin: 0;
+}
+
+#retreats-management .single-retreat .actions{
+    display: flex;
+    gap: 15px
+}
+
+#retreats-management .single-retreat button.departure-date-action{
+    background-color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 3px 5px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+#retreats-management .single-retreat .csv-button{
+    border: 1px solid #2271b1;
+    color: #2271b1;
+}
+
+#retreats-management .single-retreat .csv-button:hover{
+    background-color: #2271b1;
+    color: #fff;
+}
+
+#retreats-management .single-retreat .archive-button{
+    border: 1px solid #98560b;
+    color: #98560b;
+}
+
+#retreats-management .single-retreat .archive-button:hover{
+    background-color: #98560b;
+    color: #fff;
+}
+
+/* ROOMS STATS */
+
+
+#rooms-stats .rooms-list>li .room-content {
+    background-color: #fff;
+}
+
+#rooms-stats .retreats-revenue-wrapper {
+    overflow: hidden;
+}
+
+#rooms-stats .retreats-revenue-wrapper h4 {
+    margin: 10px 0 5px;
+}
+
+#rooms-stats .rooms-list .retreats-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 20px;
+    transition: all .3s linear;
+}
+
+#rooms-stats .retreats-content .retreat-wrapper {
+    width: 99%;
+    background-color: #fff;
+    /* border-radius: 8px; */
+    border: 1px solid #787878;
+}
+
+#rooms-stats .retreats-content .retreat-wrapper h5 {
+    margin: 0;
+    padding: 8px 25px;
+    font-size: 15px;
+    background-color: #a8a8a8;
+    color: #fff;
+}
+
+#rooms-stats .retreats-content .retreat-wrapper .retreat-dates {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+}
+
+#rooms-stats .retreats-content .retreat-wrapper .date-wrapper {
+    position: relative;
+    background: #ebebeb;
+    padding: 0 18px 0 5px;
+    border-radius: 4px;
+}
+
+#rooms-stats .retreats-content .retreat-wrapper .date-wrapper:after {
+    content: '\25BC';
+    position: absolute;
+    right: 1px;
+    top: 13px;
+}
+
+#rooms-stats .retreats-content .retreat-wrapper .date-wrapper:not(.active)::after {
+    transform: rotate(-90deg);
+}
+
+#rooms-stats .retreats-content .retreat-wrapper .date-wrapper .tab {
+    font-weight: 600;
+}
+
+#rooms-stats .retreats-content .retreat-wrapper .date-wrapper .content {
+    display: none;
+}
+
+#rooms-stats .retreats-revenue-wrapper .arrows-container {
+    position: absolute;
+    width: 100%;
+    top: 66px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#rooms-stats .retreats-revenue-wrapper .arrows-container button {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    background-color: #fff;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+#rooms-stats .retreats-revenue-wrapper .arrows-container button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#rooms-stats .retreats-revenue-wrapper:has(.retreat-wrapper.first[data-current="true"]) .arrows-container button.prev-arrow,
+#rooms-stats .retreats-revenue-wrapper:has(.retreat-wrapper.last[data-current="true"]) .arrows-container button.next-arrow {
+    opacity: 0;
+    width: 0;
+}
+
+
+#rooms-stats .rooms-list .single-payment-wrapper {
+    padding: 6px;
+    background-color: #fff;
+    width: 30%;
+}
+
+/* CONFIGURATIONS */
+
+#options form.retreat-options-form {
+    max-width: 1010px;
+}
+
+#options form.retreat-options-form .input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+#options form.retreat-options-form .input-wrapper:not(.type-repeater) {
+    align-items: center;
+    max-width: 650px;
+}
+
+#options form.retreat-options-form .input-wrapper.type-repeater {
+    flex-direction: column;
+}
+
+#options form.retreat-options-form .input-wrapper:not(.switch-button-wrapper) {
+    justify-content: space-between;
+}
+
+#options form.retreat-options-form .type-repeater {
+    margin: 15px 0;
+}
+
+#options form.retreat-options-form .type-repeater .repeater-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+#options form.retreat-options-form .type-repeater .repeater-content,
+#options form.retreat-options-form .type-repeater .repeater-buttons {
+    margin-left: 25px;
+}
+
+#options form.retreat-options-form .type-repeater ul.limits-list li {
+    padding: 5px;
+    margin: 0;
+}
+
+#options form.retreat-options-form .type-repeater ul.limits-list li:nth-child(odd) {
+    background-color: #fff;
+}
+
+#options form.retreat-options-form .type-repeater ul.limits-list li:nth-child(odd) input.item-name {
+    background-color: #f0f0f1;
+}
+
+#options form.retreat-options-form .type-repeater ul.limits-list li:nth-child(even) {
+    border: 1px solid #fff;
+}
+
+#options form.retreat-options-form .type-repeater .heading-wrapper,
+#options form.retreat-options-form .type-repeater .heading-wrapper .buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#options form.retreat-options-form .type-repeater .content-wrapper {
+    margin-left: 40px;
+}
+
+#options form.retreat-options-form .type-repeater .content-wrapper>* {
+    margin-bottom: 20px;
+}
+
+#options form.retreat-options-form .type-repeater input.item-name {
+    border: none;
+    width: 350px;
+    border: 1px solid #c2c2c2;
+}
+
+#options form.retreat-options-form .repeater-section-wrapper .label {
+    position: relative;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#options form.retreat-options-form .repeater-section-wrapper .label::before {
+    content: '\1405';
+    position: absolute;
+    left: -17px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#options form.retreat-options-form .repeater-section-wrapper.active .label::before {
+    content: '\1401';
+}
+
+#options form.retreat-options-form .repeater-section-wrapper:not(.active)>.content {
+    display: none;
+}
+
+#options form.retreat-options-form .type-repeater select.condition_logic {
+    min-height: unset;
+    font-size: 12px;
+}
+
+#options form.retreat-options-form .type-repeater input.units {
+    width: 70px;
+    direction: rtl;
+    padding-left: 0;
+}
+
+#options form.retreat-options-form .conditions-wrapper .content {
+    display: flex;
+    align-items: end;
+    gap: 50px;
+}
+
+#options form.retreat-options-form .conditions-wrapper .delete-condition-button {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #585858;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 0;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+#options form.retreat-options-form .conditions-wrapper .delete-condition-button:hover {
+    background-color: #ff4742;
+    border-color: #ff4742;
+}
+
+#options form.retreat-options-form .type-repeater .messages-checkbox-wrapper {
+    display: flex;
+    gap: 15px;
+    /* justify-content: space-between; */
+}
+
+#options form.retreat-options-form .type-repeater .input-wrapper.type-checkbox {
+    justify-content: start;
+    gap: 5px;
+}
+
+#options form.retreat-options-form .type-repeater input[type="checkbox"] {
+    margin: 0;
+}
+
+#options form.retreat-options-form .type-repeater .input-wrapper.type-checkbox label {
+    user-select: none;
+}
+
+#options form.retreat-options-form input[type="submit"] {
+    display: block;
+    width: 25%;
+    margin-left: auto;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #f0f0f1;
+    color: #2ca73d;
+    outline: none;
+    font-size: 18px;
+    font-weight: 800;
+    border: 1px solid #32bd44;
+    transition: all .3s linear;
+}
+
+#options form.retreat-options-form input[type="submit"]:hover {
+    background-color: #32bd44;
+    color: #f0f0f1;
+}
+
+#options form.retreat-options-form .messages-checkbox-wrapper {
+    gap: 55px;
+    width: 90%;
+}
+
+#options form.retreat-options-form .messages-checkbox-wrapper input[type="number"] {
+    width: 40px;
+    direction: rtl;
+    padding: 0 3px 0 0;
+}
+
+#options form.retreat-options-form .messages-checkbox-wrapper .input-wrapper.type-time {
+    justify-content: start;
+    gap: 8px;
+}
+
+#options form.retreat-options-form .messages-checkbox-wrapper .inner {
+    margin-left: 13px;
+}
+
+#options form.retreat-options-form .limit-message:has(input[type="checkbox"][role="activate"]:not(:checked)) .inner,
+#options form.retreat-options-form .limit-message:has(input[type="checkbox"][role="schedule"]:not(:checked)) .schedule-message-wrapper {
+    display: none;
+}
+
+/* #options form.retreat-options-form .switch-button-wrapper input[type=checkbox] {
+    display: none;
+}
+
+#options form.retreat-options-form .switch-button-wrapper label {
+    cursor: pointer;
+    width: 55px;
+    height: 27px;
+    background: grey;
+    display: block;
+    border-radius: 40px;
+    position: relative;
+}
+
+#options form.retreat-options-form .switch-button-wrapper label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 17px;
+    height: 18px;
+    background: #fff;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+#options form.retreat-options-form .switch-button-wrapper input:checked+label {
+    background: #bada55;
+}
+
+#options form.retreat-options-form .switch-button-wrapper input:checked+label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+#options form.retreat-options-form .switch-button-wrapper label:active:after {
+    width: 85px;
+} */
+
+:root {
+    --btn-24-bg: #FF4742;
+    --btn-25-bg: #feaf41;
+    --btn-25-edit-bg: #2ca73d;
+}
+
+/* CSS */
+.button-4 {
+    appearance: none;
+    background-color: #FAFBFC;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #24292E;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 4px 12px;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    white-space: nowrap;
+}
+
+.button-4:hover {
+    background-color: #F3F4F6;
+    text-decoration: none;
+    transition-duration: 0.1s;
+}
+
+.button-4:disabled {
+    background-color: #FAFBFC;
+    border-color: rgba(27, 31, 35, 0.15);
+    color: #959DA5;
+    cursor: default;
+}
+
+.button-4:active {
+    background-color: #EDEFF2;
+    box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+    transition: none 0s;
+}
+
+.button-4:focus {
+    outline: 1px transparent;
+}
+
+.button-4:before {
+    display: none;
+}
+
+.button-4:-webkit-details-marker {
+    display: none;
+}
+
+/* CSS */
+.button-24,
+.button-25 {
+    border: 1px solid;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 16px;
+    outline: 0;
+    padding: 6px 14px;
+    text-align: center;
+    user-select: none;
+    transition: all .3s linear;
+}
+
+.button-24 {
+    background-color: var(--btn-24-bg);
+    border-color: var(--btn-24-bg);
+}
+
+.button-25[edit-mode="false"] {
+    background-color: var(--btn-25-bg);
+    border-color: var(--btn-25-bg);
+}
+
+.button-25[edit-mode="true"] {
+    background-color: var(--btn-25-edit-bg);
+    border-color: var(--btn-25-edit-bg);
+}
+
+.button-24:hover,
+.button-24:active,
+.button-25:hover,
+.button-25:active {
+    background-color: initial;
+    background-position: 0 0;
+}
+
+.button-24:hover,
+.button-24:active {
+    color: var(--btn-24-bg);
+}
+
+.button-25:hover[edit-mode="false"],
+.button-25:active[edit-mode="false"] {
+    color: var(--btn-25-bg);
+}
+
+.button-25[edit-mode="true"]:hover,
+.button-25[edit-mode="true"]:active {
+    color: var(--btn-25-edit-bg);
+}
+
+.button-24:active,
+.button-25:active {
+    opacity: .5;
+}
+
+
+/* CSS */
+.button-59 {
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    fill: #000;
+    font-size: 12px;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    min-width: 110px;
+    outline: 0;
+    padding: 3px 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+}
+
+.button-59:focus {
+    color: #171e29;
+}
+
+.button-59:hover {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+
+.button-59:active {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+
+@media (min-width: 768px) {
+    .button-59 {
+        min-width: 170px;
+    }
+}

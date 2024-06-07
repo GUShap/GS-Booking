@@ -1,0 +1,180 @@
+/* Completing Products */
+
+:root {
+    --btn-brown-clr: #7a6366;
+    --btn-beige-clr: #ebc9ac;
+    --success-green-clr: #4caf50;
+    --error-red-clr: #ff7b61;
+}
+
+#completing-product-add-to-cart .source-content {
+    display: flex;
+    gap: 15px;
+}
+
+#completing-product-add-to-cart .source-content:has(input#source-cart:not(:checked)) .add-to-cart-wrapper .cart-option,
+#completing-product-add-to-cart .source-content:has(input#source-order:not(:checked)) .add-to-cart-wrapper .order-option,
+#completing-product-add-to-cart .item-option-wrapper:has(input[type="checkbox"]:not(:checked)) .quantity-atc-wrapper,
+#completing-product-add-to-cart .order-option:has(input#order-number[data-active="false"]) .quantity-atc-wrapper,
+#completing-product-add-to-cart .order-option .rooms-list-wrapper[data-active="false"] {
+    display: none !important;
+}
+
+#completing-product-add-to-cart .item-type-radio .input-wrapper {
+    display: flex;
+    white-space: nowrap;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#completing-product-add-to-cart input.quantity {
+    width: 50px;
+    direction: rtl;
+    padding: 0;
+    padding-right: 5px;
+}
+
+#completing-product-add-to-cart button.add-to-cart {
+    padding: 0 5px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 28px;
+    background-color: #fff;
+    color: var(--btn-brown-clr);
+    border: 1px solid var(--btn-brown-clr);
+    transition: all 0.3s linear;
+}
+
+#completing-product-add-to-cart button.add-to-cart:disabled{
+    background-color: #f5f5f5;
+    color: #c6c6c6;
+    border-color: #c6c6c6;
+}
+
+#completing-product-add-to-cart button.add-to-cart:not(:disabled):hover {
+    background-color: var(--btn-brown-clr);
+    color: #fff;
+}
+
+#completing-product-add-to-cart .quantity-atc-wrapper {
+    display: flex;
+    justify-content: end;
+    gap: 25px;
+}
+
+#completing-product-add-to-cart .item-option-wrapper {
+    margin-bottom: 15px;
+}
+
+#completing-product-add-to-cart .item-option-wrapper .input-wrapper {
+    display: flex;
+    align-items: start;
+    gap: 5px;
+}
+
+#completing-product-add-to-cart .item-option-wrapper .input-wrapper input[type="checkbox"] {
+    margin-top: 1px;
+}
+
+#completing-product-add-to-cart .option-wrapper.order-option .input-group-wrapper {
+    display: flex;
+    gap: 25px;
+    /* margin-bottom: 15px; */
+}
+#completing-product-add-to-cart .check-order-button {
+    height: 35px;
+    width: 35px;
+    padding: 9px 0;
+    background-color: #fff;
+    border: 1px solid var(--btn-brown-clr);
+    border-radius: 50%;
+    transition: all 0.3s linear;
+}
+
+#completing-product-add-to-cart .check-order-button:hover {
+    background-color: var(--btn-brown-clr);
+    border-color: var(--btn-brown-clr);
+}
+
+#completing-product-add-to-cart .check-order-button svg {
+    width: 18px;
+}
+
+#completing-product-add-to-cart .check-order-button svg circle,
+#completing-product-add-to-cart .check-order-button svg line {
+    fill: none;
+    stroke: #7a6366;
+    stroke-width: 2.5px;
+    transition: all 0.3s linear;
+}
+
+#completing-product-add-to-cart .check-order-button:hover svg circle,
+#completing-product-add-to-cart .check-order-button:hover svg line {
+    stroke: #fff;
+}
+
+#completing-product-add-to-cart .option-wrapper.order-option input[type="text"] {
+    padding: 3px 8px;
+}
+
+#completing-product-add-to-cart .order-option .input-group-wrapper .button-wrapper {
+    position: relative;
+}
+
+#completing-product-add-to-cart .result-message span {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--btn-brown-clr);
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+#completing-product-add-to-cart .result-message.success span {
+    border-color: var(--success-green-clr);
+    color: var(--success-green-clr);
+}
+#completing-product-add-to-cart .result-message.error span{
+    border-color: var(--error-red-clr);
+    color: var(--error-red-clr);
+}
+
+#completing-product-add-to-cart .result-message.error p{
+    margin: 0;
+    line-height: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    position: absolute;
+    top: 150%;
+    right: 0;
+}
+
+#completing-product-add-to-cart .custom-loader {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #FFF;
+    border-bottom-color: var(--btn-brown-clr);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#completing-product-add-to-cart .loader-wrapper{
+    display: flex;
+    justify-content: center;
+}

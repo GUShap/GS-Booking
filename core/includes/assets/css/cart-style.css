@@ -1,0 +1,73 @@
+/* CART */
+
+dl.variation .item-wrapper {
+    margin-bottom: 10px;
+}
+
+dl.variation dd p {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.elementor-widget-woocommerce-cart .woocommerce .cart th {
+    padding: 0;
+}
+
+.woocommerce td.product-name dl.variation dd {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+dl.variation button.remove-upsell {
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    line-height: 1;
+    border-color: #7a6366;
+    outline: none;
+}
+
+dl.variation button.remove-upsell.loading {
+    background-color: #fff;
+    border: 2px dashed #7a6366;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.woocommerce .woocommerce-cart-form table.cart .product-name {
+    padding: 0;
+}
+
+.woocommerce .woocommerce-cart-form table.cart .product-name >a{
+    white-space: nowrap;
+}
+
+.woocommerce .woocommerce-cart-form table.cart .product-price {
+    text-align: center;
+    padding: 0 45px;
+}
+
+/* .woocommerce .woocommerce-cart-form table.cart th.product-quantity{
+    color: #fff;
+} */
+
+.woocommerce .woocommerce-cart-form table.cart .product-quantity{
+    display: none;
+}
+
+.elementor-widget-woocommerce-cart .woocommerce .input-text.qty{
+    direction: rtl;
+    text-align: start;
+    padding-right: 10px;
+}

@@ -1,0 +1,476 @@
+#post-body-content #acf_after_title-sortables {
+    margin: 20px 0;
+}
+
+#woocommerce-product-data ul.wc-tabs li.general_info_options a,
+#woocommerce-product-data ul.wc-tabs li.dates_options a,
+#woocommerce-product-data ul.wc-tabs li.rooms_options a,
+#woocommerce-product-data ul.wc-tabs li.package_attr_options a {
+    display: flex;
+    align-items: center;
+    padding: 10px 8px;
+}
+
+#woocommerce-product-data ul.wc-tabs li.general_info_options a::before,
+#woocommerce-product-data ul.wc-tabs li.dates_options a::before,
+#woocommerce-product-data ul.wc-tabs li.rooms_options a::before,
+#woocommerce-product-data ul.wc-tabs li.package_attr_options a::before {
+    font-size: 20px;
+}
+
+#woocommerce-product-data ul.wc-tabs li.general_info_options a::before {
+    content: "\f504";
+}
+
+#woocommerce-product-data ul.wc-tabs li.dates_options a::before {
+    content: "\f508";
+}
+
+#woocommerce-product-data ul.wc-tabs li.rooms_options a::before {
+    content: "\f102";
+}
+
+#woocommerce-product-data ul.wc-tabs li.package_attr_options a::before {
+    content: "\f497";
+}
+
+#woocommerce-product-data ul.wc-tabs li.procut_qr_options a::before {
+    content: "\f115";
+}
+
+#woocommerce-product-data ul.wc-tabs li.completing_product_options a::before {
+    content: "\f132";
+}
+
+.custom-tab-content .custom-tab-title {
+    text-align: center;
+    font-size: 18px;
+}
+
+.custom-tab-content .custom-tab-data {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.woocommerce_options_panel.custom-tab-content p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+}
+
+.woocommerce_options_panel.custom-tab-content label {
+    width: unset;
+    float: unset;
+    margin: 0;
+}
+
+#general_info .general-info-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+#general_info .general-info-wrapper:not(.retreat-location-wrapper) input {
+    width: 55px;
+}
+
+#general_info .retreat-location-wrapper p,
+#general_info .group-size-wrapper p {
+    line-height: 1;
+    white-space: nowrap;
+}
+
+#general_info .retreat-location-wrapper input {
+    min-height: unset;
+}
+
+#general_info .group-size-wrapper input {
+    direction: rtl;
+    padding-left: 0;
+    max-width: 160px;
+}
+
+#rooms .rooms-checkboxes-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin: auto;
+}
+
+#rooms .rooms-checkboxes-wrapper .room-wrapper {
+    background-color: rgb(225 240 255);
+    border-radius: 4px;
+    padding: 8px 0 0 8px;
+}
+
+#rooms .room-price-wrapper {
+    position: relative;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    line-height: 1;
+}
+
+#rooms .room-wrapper:has(input[type="checkbox"]:not(:checked)) .room-price-wrapper {
+    display: none;
+}
+
+#rooms .room-price-wrapper label {
+    white-space: nowrap;
+}
+
+#rooms .room-price-wrapper input {
+    width: 70px;
+    direction: rtl;
+    text-align: center;
+    padding-left: 0;
+}
+
+#rooms .room-price-wrapper p {
+    line-height: 1;
+    font-weight: 700;
+}
+
+#rooms .room-price-wrapper[edit-mode="false"] .set-room-price-button,
+#rooms .room-price-wrapper[edit-mode="false"] input.room-price-input,
+#rooms .room-price-wrapper[edit-mode="true"] .edit-room-price-button,
+#rooms .room-price-wrapper[edit-mode="true"] .room-price,
+#rooms .room-price-wrapper[edit-mode="true"] .currency {
+    display: none;
+}
+
+#rooms .room-price-wrapper .price-error-message {
+    position: absolute;
+    bottom: 107%;
+    right: 50%;
+    width: 50%;
+    transform: translateX(50%);
+    text-align: center;
+    background-color: #f7eaea;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2px;
+    font-weight: 700;
+    z-index: 1;
+}
+
+#rooms .room-price-wrapper .price-error-message:after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 10px;
+    top: 83%;
+    left: 30px;
+    background-color: #f7eaea;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    transform: rotate(48deg);
+}
+
+#dates {
+    --tabs-bg-color: #d9d9d9;
+    padding: 0 25px;
+}
+
+#dates .dates-wrapper {
+    position: relative;
+    min-height: 240px;
+    margin-top: 15px;
+}
+
+#dates .departure-date-wrapper {
+    /* position: absolute; */
+    /* width: 100%; */
+    background-color: #fff;
+
+}
+
+#dates .departure-date-wrapper[data-selected="false"] {
+    z-index: 0;
+}
+
+#dates .departure-date-wrapper[data-selected="true"] {
+    z-index: 1;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .max-participants-wrapper span,
+#dates .departure-date-wrapper[edit-mode="true"] ul.rooms-list,
+#dates .departure-date-wrapper[edit-mode="true"] button.edit-info-button,
+#dates .departure-date-wrapper[edit-mode="true"] .date-tab p,
+#dates .departure-date-wrapper[edit-mode="true"] .registration-activation-wrapper,
+#dates .departure-date-wrapper[edit-mode="false"] button.save-info-button,
+#dates .departure-date-wrapper[edit-mode="false"] .date-tab input,
+#dates .departure-date-wrapper[edit-mode="false"] ul.select-room-list,
+#dates .departure-date-wrapper[edit-mode="false"] .edit-info-wrapper {
+    display: none;
+}
+
+#dates .departure-date-wrapper[edit-mode="false"] .date-tab {
+    position: absolute;
+    padding: 4px 0;
+    cursor: pointer;
+    height: fit-content;
+    text-align: center;
+}
+
+#dates .dates-wrapper:has(.departure-date-wrapper[edit-mode="true"]) .departure-date-wrapper[edit-mode="false"] .date-tab{
+    opacity: .2;
+}
+
+#dates .departure-date-wrapper .date-tab:nth-child(4n),
+#dates .departure-date-wrapper .date-tab:first-child {
+    border-left: 1px solid var(--tabs-bg-color);
+}
+
+#dates .departure-date-wrapper:last-of-type .date-tab {
+    border-right: 1px solid var(--tabs-bg-color);
+}
+
+#dates .departure-date-wrapper[data-selected="true"] .date-tab {
+    background-color: #fff;
+    border-top: 1px solid var(--tabs-bg-color);
+}
+
+#dates .departure-date-wrapper[data-selected="false"] .date-tab {
+    background-color: var(--tabs-bg-color);
+    bottom: 100%;
+}
+
+
+#dates .departure-date-wrapper .date-tab p {
+    text-align: center;
+    font-weight: 600;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .date-tab{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 11px 0;
+    gap: 6px;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .date-tab input {
+    padding: 2px 5px;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .date-content-wrapper{
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#dates .departure-date-wrapper[data-selected="false"] .date-content-wrapper {
+    display: none;
+}
+
+#dates .departure-date-wrapper .date-content-wrapper {
+    overflow-y: auto;
+    max-height: 200px;
+    padding: 20px 10px 10px;
+    border: 1px solid var(--tabs-bg-color);
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .date-content-wrapper{
+    border-top: none;
+}
+
+#dates .departure-date-wrapper .availability-wrapper,
+#dates .departure-date-wrapper .footing-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#dates .info-wrapper{
+    margin-top: 15px;
+}
+#dates .info-wrapper .rooms-list-wrapper >p{
+    margin: 0;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+#dates .departure-date-wrapper .footing-wrapper {
+    align-items: end;
+}
+
+#dates .departure-date-wrapper .info-wrapper ul.rooms-list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+    justify-content: center;
+}
+
+#dates .departure-date-wrapper .info-wrapper ul.rooms-list li {
+    width: fit-content;
+    padding: 3px 5px;
+    border: 1px solid #cfdbde;
+    background-color: #bada55;
+    border-radius: 7px;
+}
+
+#dates .departure-date-wrapper .info-wrapper ul.rooms-list li[data-booked="true"] {
+    background-color: #ffd9c3;
+}
+
+#dates .departure-date-wrapper .info-wrapper ul.rooms-list li p {
+    line-height: 1.2;
+}
+
+#dates .departure-date-wrapper .info-wrapper ul.rooms-list li .room-name {
+    font-weight: 600;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#dates .departure-date-wrapper .info-wrapper ul.rooms-list li span {
+    float: inline-end;
+    margin-left: 4px;
+}
+
+#dates .departure-date-wrapper .date-content-wrapper .buttons-wrapper{
+    text-align: end;
+}
+
+#dates .departure-date-wrapper .switch-button-wrapper input[type=checkbox] {
+    display: none;
+}
+
+#dates .departure-date-wrapper .switch-button-wrapper label {
+    cursor: pointer;
+    width: 55px;
+    height: 27px;
+    background: grey;
+    display: block;
+    border-radius: 40px;
+    position: relative;
+}
+
+#dates .departure-date-wrapper .switch-button-wrapper label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 17px;
+    height: 18px;
+    background: #fff;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+#dates .departure-date-wrapper .switch-button-wrapper input:checked+label {
+    background: #bada55;
+}
+
+#dates .departure-date-wrapper .switch-button-wrapper input:checked+label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+#dates .departure-date-wrapper .switch-button-wrapper label:active:after {
+    width: 85px;
+}
+#dates .departure-date-wrapper[edit-mode="true"]:not(:has(.date-input.has-date)) .date-content-wrapper{
+    opacity: 0;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .date-tab:not(:has( .date-input.has-date)){
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--tabs-bg-color);
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .max-participants-wrapper,
+#dates .departure-date-wrapper[edit-mode="true"] .max-second-participants-wrapper{
+    display: flex;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .max-participants-wrapper input {
+    padding: 0 2px 0 0;
+    min-height: unset;
+    width: 35px;
+    direction: rtl;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .max-participants-wrapper button {
+    height: 100%;
+}
+
+/* #dates .departure-date-wrapper[edit-mode="true"] .date-content-wrapper[data-blocked="true"]{
+    display: none;
+} */
+
+#dates .departure-date-wrapper[edit-mode="true"] .maximum-participants,
+#dates .departure-date-wrapper[edit-mode="true"] .maximum-second-participants {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .maximum-participants input,
+#dates .departure-date-wrapper[edit-mode="true"] .maximum-second-participants input{
+    width: 45px;
+    height: 25px;
+    min-height: unset;
+    direction: rtl;
+    padding: 2px 2px 2px 0;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .rooms-list-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .rooms-list-wrapper ul.select-room-list {
+    /* overflow-y: auto; */
+    /* height: 130px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px 8px;
+    margin: 0;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] .rooms-list-wrapper li {
+    border: 1px solid #cfdbde;
+    border-radius: 7px;
+    padding: 3px 5px;
+    background-color: #f5fffc;
+}
+
+#dates .departure-date-wrapper[edit-mode="true"] li.select-room-item {
+    cursor: pointer;
+    user-select: none;
+}
+
+#procut_qr .qr-code-wrapper[data-active="false"] button.download-btn {
+    display: none;
+}
+
+#procut_qr .qr-code-wrapper[data-active="true"] button.create-qr-code-btn,
+#procut_qr .qr-code-wrapper[data-active="true"] button.save-btn,
+#procut_qr .qr-code-wrapper[data-active="true"] select#atc-redirect-select {
+    display: none;
+}
+
+#completing_product .completing-product-content .completing-product-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#completing_product .completing-product-content:has(#enable_multiple_items:not(:checked)) .limit-quantity-wrapper,
+#completing_product .completing-product-content:has(#limit_quantity:not(:checked)) .max-items-limit-wrapper {
+    display: none;
+}
+
+#completing_product .completing-product-content .max-items-limit-wrapper input {
+    width: 40px;
+    padding-left: 0;
+    direction: rtl;
+}

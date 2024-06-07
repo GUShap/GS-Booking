@@ -1,0 +1,455 @@
+:root {
+    --calendar-bg-color: #2a323f;
+}
+
+.woocommerce div.product div.images {
+    margin-bottom: 0;
+}
+
+.retreats-calendar-container {
+    overflow: hidden;
+}
+
+.retreats-calendar-container .retreats-calendar-content,
+.retreats-calendar-container .month-wrapper {
+    transition: all .3s linear;
+}
+
+.retreats-calendar-container .month-wrapper .month-title {
+    text-align: center;
+    margin: 0;
+}
+
+.retreats-calendar-container .month-wrapper .days-of-week-wrapper,
+.retreats-calendar-container .month-wrapper .dates-wrapper {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+}
+
+.retreats-calendar-container .day-wrapper {
+    position: relative;
+}
+
+.retreats-calendar-container[data-fow="sunday"] .day-wrapper[data-day="sunday"] {
+    grid-area: auto/1;
+}
+
+.retreats-calendar-container[data-fow="sunday"] .day-wrapper[data-day="monday"] {
+    grid-area: auto/2;
+}
+
+.retreats-calendar-container[data-fow="sunday"] .day-wrapper[data-day="tuesday"] {
+    grid-area: auto/3;
+}
+
+.retreats-calendar-container[data-fow="sunday"] .day-wrapper[data-day="wednesday"] {
+    grid-area: auto/4;
+}
+
+.retreats-calendar-container[data-fow="sunday"] .day-wrapper[data-day="thursday"] {
+    grid-area: auto/5;
+}
+
+.retreats-calendar-container[data-fow="sunday"] .day-wrapper[data-day="friday"] {
+    grid-area: auto/6;
+}
+
+.retreats-calendar-container[data-fow="sunday"] .day-wrapper[data-day="saturday"] {
+    grid-area: auto/7;
+}
+
+.retreats-calendar-container[data-fow="monday"] .day-wrapper[data-day="monday"] {
+    grid-area: auto/1;
+}
+
+.retreats-calendar-container[data-fow="monday"] .day-wrapper[data-day="tuesday"] {
+    grid-area: auto/2;
+}
+
+.retreats-calendar-container[data-fow="monday"] .day-wrapper[data-day="wednesday"] {
+    grid-area: auto/3;
+}
+
+.retreats-calendar-container[data-fow="monday"] .day-wrapper[data-day="thursday"] {
+    grid-area: auto/4;
+}
+
+.retreats-calendar-container[data-fow="monday"] .day-wrapper[data-day="friday"] {
+    grid-area: auto/5;
+}
+
+.retreats-calendar-container[data-fow="monday"] .day-wrapper[data-day="saturday"] {
+    grid-area: auto/6;
+}
+
+.retreats-calendar-container[data-fow="monday"] .day-wrapper[data-day="sunday"] {
+    grid-area: auto/7;
+}
+
+.retreats-calendar-container .day-wrapper p {
+    margin: 0;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: all .3s linear;
+}
+
+.retreats-calendar-container .day-wrapper .date-number {
+    z-index: 1;
+    pointer-events: none;
+}
+
+.retreats-calendar-container .day-wrapper .retreats-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+/**********************************************/
+
+.retreats-calendar-container:not(.single-retreat) .retreats-calendar-content {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.retreats-calendar-container:not(.single-retreat) .month-wrapper {
+    width: 50%;
+    padding: 0 25px 30px;
+    transition: all .4s linear;
+}
+
+.retreats-calendar-container .month-wrapper .day-wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retreats-calendar-container:not(.single-retreat) .month-wrapper .month-title {
+    /* color: #fcee6d; */
+    padding: 15px 0;
+    font-size: 27px;
+}
+
+.retreats-calendar-container:not(.single-retreat) .month-wrapper .dates-wrapper {
+    color: #fff;
+    gap: 8px 0;
+}
+
+.retreats-calendar-container:not(.single-retreat) .month-wrapper .day-wrapper {
+    height: clamp(60px, 6.4vw, 75px);
+}
+
+.retreats-calendar-container:not(.single-retreat) .month-wrapper .day-wrapper[data-departure="true"] {
+    position: relative;
+    cursor: pointer;
+}
+
+.retreats-calendar-container:not(.single-retreat) .month-wrapper .day-wrapper[data-departure="false"] .overlay {
+    left: 0;
+    aspect-ratio: 1;
+}
+
+.retreats-calendar-container:not(.single-retreat) .month-wrapper .day-wrapper[data-departure="false"]:has(.overlay) p {
+    border-radius: 0 50% 50% 0;
+}
+
+.retreats-calendar-container:not(.single-retreat) .month-wrapper .day-wrapper p {
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+}
+@media (max-width: 768px) {
+    .retreats-calendar-container:not(.single-retreat) .month-wrapper {
+        width: 100%;
+        padding: 0 15px 10px;
+    }
+}
+/**********************************************/
+@media screen and (min-width: 1024px) {
+    :root {
+        --cell-size: 67px;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+    :root {
+        --cell-size: clamp(50px, 6.4vw, 67px);
+    }
+
+}
+
+@media (max-width: 768px) {
+    :root {
+        --cell-size: clamp(48px, 11.4vw, 85px);
+    }
+}
+
+.retreats-calendar-container.single-retreat .retreats-calendar-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(var(--months-count), 100%);
+}
+
+.retreats-calendar-container.single-retreat .month-wrapper .days-of-week-wrapper,
+.retreats-calendar-container.single-retreat .month-wrapper .dates-wrapper {
+    grid-template-columns: repeat(7, var(--cell-size));
+    justify-content: center;
+}
+
+.retreats-calendar-container.single-retreat .month-content .dates-wrapper {
+    grid-auto-rows: var(--cell-size);
+    gap: 5px 0;
+}
+
+.retreats-calendar-container.single-retreat .month-wrapper {
+    padding: 0 30px;
+}
+
+.retreats-calendar-container.single-retreat .month-wrapper .month-title {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.retreats-calendar-container .day-wrapper {
+    user-select: none;
+}
+
+.retreats-calendar-container .day-wrapper[data-trip="true"] {
+    cursor: pointer;
+}
+
+.retreats-calendar-container.single-retreat .month-wrapper p {
+    aspect-ratio: 1.1;
+}
+
+.retreats-calendar-container.single-retreat .month-wrapper .day-wrapper[data-trip="true"].hovered:not(.full-booked) p,
+.retreats-calendar-container.single-retreat .month-wrapper .day-wrapper[data-trip="true"].selected:not(.full-booked) p {}
+
+.rooms-list-container .rooms-list-heading h6 {
+    margin: 0;
+}
+
+.retreats-calendar-container .day-wrapper .retreat-single-day {
+    transition: all .2s linear;
+}
+
+
+.retreats-calendar-container .month-wrapper .day-wrapper .retreat-single-day.selected {
+    background-color: var(--retreat-color);
+}
+
+.retreats-calendar-container .month-wrapper .day-wrapper .retreat-single-day.hovered {
+    background-color: var(--retreat-hover-color);
+}
+
+
+.retreats-calendar-container .retreat-single-day.full-booked {
+    position: relative;
+    cursor: auto;
+    background-color: #e3e3e3 !important;
+    border-color: #777777 !important;
+}
+
+.retreats-calendar-container .retreat-single-day.full-booked p {}
+
+.retreats-calendar-container .month-wrapper .day-wrapper .retreat-single-day.disabled {
+    background-color: #e3e3e3;
+    border-color: #777777 !important;
+}
+
+/**********************************************/
+.retreats-calendar-container.single-retreat .calendar-arrow-button {
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    font-size: 14px;
+}
+
+.retreats-calendar-container .arrow-container.hidden{
+    display: none;
+}
+
+.retreats-calendar-container.single-retreat .calendar-arrow-button.left {
+    left: 5px;
+}
+
+.retreats-calendar-container.single-retreat .calendar-arrow-button.right {
+    right: 5px;
+}
+
+@media (min-width: 768px) {
+    .retreats-calendar-container.single-retreat .calendar-arrow-button {
+        top: 19%;
+    }
+}
+
+@media (max-width: 768px) {
+    .retreats-calendar-container.single-retreat .calendar-arrow-button {
+        top: 4%;
+    }
+
+    .retreats-calendar-container.single-retreat .calendar-arrow-button.left {
+        left: 14px;
+    }
+
+    .retreats-calendar-container.single-retreat .calendar-arrow-button.right {
+        right: 14px;
+    }
+
+}
+
+/**********************************************/
+
+.retreats-calendar-container:not(.single-retreat) .arrow-container .calendar-arrow-button {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    padding: 0;
+}
+
+.arrow-container .calendar-arrow-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.arrow-container .calendar-arrow-button,
+.arrow-container .calendar-arrow-button:focus {
+    background-color: #ffffffe0;
+    color: var(--calendar-bg-color);
+    border: 2px solid var(--calendar-bg-color);
+}
+
+.arrow-container .calendar-arrow-button:hover {
+    color: #ffffffe0;
+    border-color: #ffffffe0;
+    background-color: var(--calendar-bg-color);
+}
+
+
+.arrow-container .calendar-arrow-button:focus {
+    outline: none;
+}
+
+.retreats-calendar-container:not(.single-retreat) .arrow-container .calendar-arrow-button.left {
+    inset: 3% auto auto 5px;
+}
+
+.retreats-calendar-container:not(.single-retreat) .arrow-container .calendar-arrow-button.right {
+    inset: 3% 5px auto auto;
+}
+
+@media (max-width: 768px) {
+    .retreats-calendar-container:not(.single-retreat) .arrow-container .calendar-arrow-button {
+        height: 30px;
+        width: 30px;
+        font-size: 16px;
+    }
+
+    .retreats-calendar-container:not(.single-retreat) .arrow-container .calendar-arrow-button.left {
+        inset: 9% auto auto 5px;
+    }
+
+    .retreats-calendar-container:not(.single-retreat) .arrow-container .calendar-arrow-button.right {
+        inset: 9% 5px auto auto;
+    }
+
+}
+/**********************************************/
+
+.retreat-info-wrapper {
+    --border-radius: 180px;
+    position: relative;
+    display: none;
+    border-radius: var(--border-radius);
+    border-width: 3px !important;
+    grid-column: 1/-1;
+    background-color: var(--calendar-bg-color);
+}
+
+.retreat-info-wrapper .content-container {
+    display: flex;
+    gap: 25px;
+    height: 100%;
+}
+
+.retreat-info-content {
+    width: 60%;
+    margin: 12px 0 0;
+}
+
+
+.retreat-info-wrapper .retreat-image {
+    width: 40%;
+    position: relative;
+}
+
+.retreat-info-wrapper .retreat-image img,
+.retreat-info-wrapper .retreat-image .image-overlay {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.retreat-info-wrapper .retreat-image img {
+    aspect-ratio: 1.2;
+    object-fit: cover;
+    height: 100%;
+}
+
+.retreat-info-wrapper .retreat-image .image-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .25;
+    left: 0;
+}
+
+.retreat-info-wrapper .retreat-name {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.retreat-info-wrapper .info-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 5px;
+    max-width: 240px;
+}
+
+.retreat-info-wrapper .info-heading * {
+    margin: 0;
+    font-size: 15px;
+}
+
+.retreat-info-wrapper .retreat-description {
+    max-width: 50ch;
+    font-size: 14px;
+    margin-top: 3px;
+    line-height: 1.2;
+}
+
+.retreat-info-wrapper .retreat-description ul {
+    padding: 0;
+}
+
+.retreat-info-wrapper .retreat-link {
+    position: absolute;
+    bottom: 8px;
+    right: 12%;
+    padding: 3px 10px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+}

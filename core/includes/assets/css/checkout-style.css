@@ -1,0 +1,126 @@
+#content .elementor-widget-woocommerce-checkout-page .woocommerce .shop_table tbody td .product-quantity {
+    display: none;
+}
+
+#content .elementor-widget-woocommerce-checkout-page .woocommerce .product-name .variation {
+    margin-bottom: 20px;
+}
+
+#content .participants-details-container {
+    background: var(--sections-background-color, #fff);
+    border-radius: var(--sections-border-radius, 3px);
+    padding: var(--sections-padding, 16px 30px);
+    margin: var(--sections-margin, 0 0 24px 0);
+    border: 1px var(--sections-border-type, solid) var(--sections-border-color, #d5d8dc);
+}
+
+#content .participants-details-container .room-participants-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 15px;
+}
+
+#content .participants-details-container .room-participants-wrapper:not(:last-of-type) {
+    margin-bottom: 35px;
+}
+
+#content .participants-details-container .room-participants-wrapper p {
+    margin: 0;
+}
+
+#content .room-participants-heading {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+}
+
+#content .participants-details-container .input-wrapper.type-checkbox {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: calc(100% + 7px);
+}
+
+#content .participant-details-content{
+    position: relative;
+}
+
+#content .participants-details-container .input-group-wrapper .input-wrapper {
+    margin-bottom: 8px;
+}
+
+#content .deposit-payment-options-container .deposit-payment-info {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+#content .cart_item dd p {
+    display: flex;
+    justify-content: space-between;
+}
+
+#order_review .cart_item td.product-name{
+    width: 215px;
+    max-width: unset;
+    white-space: nowrap;
+    padding: 0;
+}
+
+#order_review .cart_item .variation-DepositAmount,
+#order_review .cart_item .variation-FuturePayments{
+    display: none;
+}
+
+#order_review .cart_item dt:has(a),
+#order_review .cart_item dt:has(a)+dd{
+    padding-top: 8px;
+}
+
+#order_review .cart_item td.product-total{
+    padding: 0;
+}
+
+#content .cart_item button.remove-upsell,
+#content .item-wrapper button.remove-upsell {
+    padding: 0;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    line-height: 1;
+    border-color: #7a6366;
+    outline: none;
+    transition: all 0.3s linear;
+}
+
+#content .cart_item button.remove-upsell.loading,
+#content .item-wrapper button.remove-upsell.loading {
+    /* color: #7a6366; */
+    background-color: #fff;
+    border: 2px dashed #7a6366;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#payment .place-order{
+    position: relative;
+}
+
+#payment .overlay-button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 42px;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+}
